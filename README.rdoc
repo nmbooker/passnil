@@ -8,7 +8,8 @@ A shorthand way of passing through nil unchanged where running certain methods o
 
 == FEATURES/PROBLEMS:
 
-* I need to decide whether 'passempty' should pass the empty? object through or return nil.  I'm guessing as it has the word 'pass' it should pass it through.
+* I need to decide whether 'passempty' should pass the empty? object through or return nil.
+  At the moment, it returns nil by default as it's more predictable.
 
 == SYNOPSIS:
 
