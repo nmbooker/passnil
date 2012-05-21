@@ -1,32 +1,40 @@
 = passnil
 
-* http://github.com/#{github_username}/#{project_name}
+* http://github.com/nmbooker/passnil
 
 == DESCRIPTION:
 
-FIX (describe your package)
+A shorthand way of passing through nil unchanged where running certain methods on it will raise an exception.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* I need to decide whether 'passempty' should pass the empty? object through or return nil.  I'm guessing as it has the word 'pass' it should pass it through.
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+  require 'passnil'
+  nil.passnil { |x| x.toupper }
+  # => nil
+  nil.passnil('') { |x| x.toupper }
+  # => ''
+  'abc'.passnil { |x| x.toupper }
+  # => 'ABC'
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* Ruby
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* sudo gem install
+
+or add it to your Gemfile in the case of bundler.
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2012 FIXME full name
+Copyright (c) 2012 Nicholas Booker
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
